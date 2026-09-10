@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicum 3 - Web Forms</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+        .container { max-width: 700px; background: white; margin: auto; padding: 25px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        label { font-weight: bold; margin-top: 10px; display: block; }
+        input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .inline { display: flex; gap: 10px; align-items: center; }
+        .inline input { width: auto; }
+        button { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; }
+        .submit { background: #007bff; color: white; }
+        .reset { background: #6c757d; color: white; }
+        button:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Student Registration Form</h2>
+    <form action="#" method="POST">
+        
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required maxlength="50">
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Min 8 characters" required pattern=".{8,}" title="Minimum 8 characters">
+
+        <label for="phone">Mobile Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="17" max="60" placeholder="Enter age" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label>Gender:</label>
+        <div class="inline">
+            <input type="radio" id="male" name="gender" value="male" required><label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other"><label for="other">Other</label>
+        </div>
+
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="">-- Select Department --</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="mech">Mechanical</option>
+            <option value="civil">Civil</option>
+            <option value="it">IT</option>
+        </select>
+
+        <label>Skills Known:</label>
+        <div class="inline">
+            <input type="checkbox" id="html" name="skills" value="HTML"><label for="html">HTML</label>
+            <input type="checkbox" id="css" name="skills" value="CSS"><label for="css">CSS</label>
+            <input type="checkbox" id="js" name="skills" value="JS"><label for="js">JavaScript</label>
+        </div>
+
+        <label for="range">Rate your HTML Skill (0-10):</label>
+        <input type="range" id="range" name="skill_range" min="0" max="10">
+
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" placeholder="Enter your address" required></textarea>
+
+        <label for="website">Personal Website (Optional):</label>
+        <input type="url" id="website" name="website" placeholder="https://example.com">
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="submit">Submit</button>
+            <button type="reset" class="reset">Reset</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
